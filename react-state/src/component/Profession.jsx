@@ -1,5 +1,4 @@
-import React from "react";
-const Profile = (props) => {
+const Profession = (props) => {
   const handleClick = () => {
     props.handleName(props.title);
   };
@@ -19,7 +18,8 @@ const Profile = (props) => {
           </div>
         </>
       )}
+      <button onClick={this.handleShowPerson}>click here</button>
     </>
   );
 };
-export default Profile;
+export default Profession;
