@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-//import Profession from "./component/Profession.jsx";
 import "./App.css";
-//import FullData from "./component/FullData";
 
 class App extends Component {
   state = {
