@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from "react";
-import Card from "./Card";
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
 let API_key = "&api_key=76e16922d1a7765f7bb0cea061d13d45";
 let base_url = "https://api.themoviedb.org/3";
 let url = base_url + "/discover/movie?sort_by=popularity.desc" + API_key;
 let arr = ["Popular", "Action", "Drama", "Comedy"];
-const Main = () => {
-  const [movieData, setData] = useState([]);
-  const [url_set, setUrl] = useState(url);
+
+const Navbar = () => {
+  const [setUrl] = useState(url);
   const [search, setSearch] = useState();
 
-  useEffect(() => {
-    fetch(url_set)
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data.results);
-      });
-  }, [url_set]);
   const getData = (movieType) => {
     if (movieType === "Popular") {
       url = base_url + "/discover/movie?sort_by=popularity.desc" + API_key;
@@ -51,24 +44,23 @@ const Main = () => {
       setSearch(" ");
     }
   };
-
   return (
-    <>
+    <nav>
       <div className="header">
         <nav>
           <ul>
             {arr.map((value) => {
               return (
                 <li>
-                  <a
-                    href="/#"
+                  <Link
+                    to="/#"
                     name={value}
                     onClick={(e) => {
                       getData(e.target.name);
                     }}
                   >
                     {value}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
@@ -88,21 +80,12 @@ const Main = () => {
               onKeyPress={searchMovie}
             ></input>
             <button>
-              <i class="fas fa-search"></i>
+              <i className="fas fa-search"></i>
             </button>
           </div>
         </form>
       </div>
-      <div className="container">
-        {movieData.length === 0 ? (
-          <p className="notfound">Not found</p>
-        ) : (
-          movieData.map((res, pos) => {
-            return <Card info={res} key={pos} />;
-          })
-        )}
-      </div>
-    </>
+    </nav>
   );
 };
-export default Main;
+export default Navbar;
