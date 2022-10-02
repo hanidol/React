@@ -27,6 +27,7 @@ nav ul li {
 }
 nav ul li a {
   text-decoration: none;
+  font-family: cursive;
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
@@ -119,6 +120,7 @@ nav ul li a:focus::before {
   width: 160px;
   font-size: 15px;
   text-align: center;
+  font-family: "Noto Sans Balinese", sans-serif;
 }
 .movie-details .overview {
   position: absolute;
@@ -133,6 +135,7 @@ nav ul li a:focus::before {
   transition: all 0.4s ease-in-out;
   overflow-y: auto;
   transform: translateY(101%);
+  font-family: "Noto Sans Balinese", sans-serif;
 }
 .movie-details:hover .overview {
   transform: translateY(0%);
@@ -172,4 +175,28 @@ nav ul li a:focus::before {
 .notfound {
   font-size: 40px;
   font-weight: bold;
+}
+.footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+h1 {
+  text-align: center;
+  font-family: cursive;
+}
+p {
+  width: 100%;
+  margin: 1em auto;
+  text-align: center;
+  font-family: cursive;
+}
+hr {
+  width: 60%;
+  height: 1px;
+  background-color: #000;
 }
